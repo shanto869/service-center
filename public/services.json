@@ -1,0 +1,114 @@
+[
+    {
+        "_id": "636a25cca7642dd4b71fedc0",
+        "service_name": "Nutrition Strategies",
+        "ratings": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "price": 49.99,
+        "description": "Nutrition is a critical part of health and development. Better nutrition is related to improved infant, child and maternal health, stronger immune systems, safer pregnancy and childbirth, lower risk of non-communicable diseases (such as diabetes and cardiovascular disease), and longevity. Healthy children learn better.People with adequate nutrition are more productive and can create opportunities to gradually break the cycles of poverty and hunger.",
+        "picture": "http://demo.joomlabuff.com/healthcoach/images/joomlabuff/featured-image-1.jpg",
+        "trainer": "Shanto Biswas",
+        "gender": "male",
+        "email": "vickigriffith@baluba.com",
+        "phone": "+1 (863) 459-3786",
+        "address": "428 Sackett Street, Dargan, New Hampshire, 1214"
+    },
+    {
+        "_id": "636a25cc6a97ad6ad9592429",
+        "service_name": "Workout Routines",
+        "ratings": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "price": 77.99,
+        "description": "Walking, running, dancing, swimming, yoga are a few physical activity. Regular physical activity can improve your muscle strength and boost your endurance. Exercise delivers oxygen and nutrients to your tissues and helps your cardiovascular system work more efficiently. And when your heart and lung health improve, you have more energy to tackle daily chores.",
+        "picture": "http://demo.joomlabuff.com/healthcoach/images/joomlabuff/featured-image-2.jpg",
+        "trainer": "Shanto Biswas",
+        "gender": "male",
+        "email": "vickigriffith@baluba.com",
+        "phone": "+1 (863) 459-3786",
+        "address": "428 Sackett Street, Dargan, New Hampshire, 1214"
+    },
+    {
+        "_id": "636a25cc79fd9369b5abb58e",
+        "service_name": "Support & Motivation",
+        "ratings": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "price": 49.99,
+        "description": "In your health journey, it’s not always easy to keep yourself motivated.  You may have a hard time getting out the house to walk down the same street, in the same neighborhood, with the same dog that barks at you when you pass it. We totally get it! To keep things from being repetitive and boring, you can switch things up a bit. Instead of tackling things alone, develop your own support group. A support group can consist of a group of friends, family, and medical professionals to help keep you accountable and closer to your health goals.",
+        "picture": "http://demo.joomlabuff.com/healthcoach/images/joomlabuff/featured-image-3.jpg",
+        "trainer": "Shanto Biswas",
+        "gender": "male",
+        "email": "vickigriffith@baluba.com",
+        "phone": "+1 (863) 459-3786",
+        "address": "428 Sackett Street, Dargan, New Hampshire, 1214"
+    },
+    {
+        "_id": "636a25cc59342e8ed7ef186e",
+        "service_name": "Balance Body & Mind",
+        "ratings": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "price": 69.99,
+        "description": "Becoming aware of the mind-body-spirit connection is our most powerful tool in fostering life balance. It is through this connection we find strength, love, inner peace, courage, wellness and can be whole in the most important areas of life. When one is out of balance, the others are affected. We discover this connection by looking inward and beginning to listen more closely to what our bodies are telling us. We can begin by learning to put ourselves back into our lives.",
+        "picture": "http://demo.joomlabuff.com/healthcoach/images/joomlabuff/featured-image-10.jpg",
+        "trainer": "Shanto Biswas",
+        "gender": "male",
+        "email": "vickigriffith@baluba.com",
+        "phone": "+1 (863) 459-3786",
+        "address": "428 Sackett Street, Dargan, New Hampshire, 1214"
+    },
+    {
+        "_id": "636a25ccad67f6226dce1eb3",
+        "service_name": "Physical Activity",
+        "ratings": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "price": 59.99,
+        "description": "Regular physical activity is one of the most important things you can do for your health. Being physically active can improve your brain health, help manage weight, reduce the risk of disease, strengthen bones and muscles, and improve your ability to do everyday activities. Adults who sit less and do any amount of moderate-to-vigorous physical activity gain some health benefits. Only a few lifestyle choices have as large an impact on your health as physical activity. Everyone can experience the health benefits of physical activity – age, abilities, ethnicity, shape, or size do not matter.",
+        "picture": "http://demo.joomlabuff.com/healthcoach/images/joomlabuff/featured-image-11.jpg",
+        "trainer": "Shanto Biswas",
+        "gender": "male",
+        "email": "vickigriffith@baluba.com",
+        "phone": "+1 (863) 459-3786",
+        "address": "428 Sackett Street, Dargan, New Hampshire, 1214"
+    },
+    {
+        "_id": "636a25cc5723df2eb8159f48",
+        "service_name": "Fitness & Performance",
+        "ratings": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "price": 49.99,
+        "description": "There are numerous health advantages to physical fitness. Regular exercise and physical activity promotes strong muscles and bones. It improves respiratory, cardiovascular health, and overall health. Staying active can also help you maintain a healthy weight, reduce your risk for type 2 diabetes, heart disease, and reduce your risk for some cancers. In other words, staying active is a crucial part of maintaining good health and wellness. Encourage your family to be more active, and challenge yourself to meet daily or weekly physical activity goals.",
+        "picture": "http://demo.joomlabuff.com/healthcoach/images/joomlabuff/featured-image-12.jpg",
+        "trainer": "Shanto Biswas",
+        "gender": "male",
+        "email": "vickigriffith@baluba.com",
+        "phone": "+1 (863) 459-3786",
+        "address": "428 Sackett Street, Dargan, New Hampshire, 1214"
+    }
+]

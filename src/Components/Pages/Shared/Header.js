@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { FaCuttlefish, FaFonticonsFi } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
@@ -15,9 +16,19 @@ const Header = () => {
     const meunItems = <>
         <li> <Link to='/' className='font-semibold mx-1'>Home</Link></li>
         <li> <Link to='/' className='font-semibold mx-1'>{user?.email}</Link></li>
-        <li> <Link to='/login' className='font-semibold mx-1'>Login</Link></li>
-        <li> <Link to='/signup' className='font-semibold mx-1'>Sign Up</Link></li>
-        <li> <Link to='/' onClick={handleLogOut} className='font-semibold mx-1'>Logout</Link></li>
+        {
+            user?.email ? <>
+                <li> <Link to='/' onClick={handleLogOut} className='font-semibold mx-1'>Logout</Link></li>
+
+            </>
+                :
+                <>
+                    <li> <Link to='/login' className='font-semibold mx-1'>Login</Link></li>
+                    <li> <Link to='/signup' className='font-semibold mx-1'>Sign Up</Link></li>
+
+                </>
+        }
+
 
     </>
 
@@ -35,7 +46,7 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">daisyUI</Link >
+                <Link className="btn btn-link text-black text-2xl"><FaFonticonsFi />tness  <FaCuttlefish />ube</Link >
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
