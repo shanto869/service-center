@@ -1,0 +1,40 @@
+:root {
+    --paragraph-font: 'News Cycle', sans-serif;
+    --heading-font: 'Handlee', cursive;
+    --nav-link-font: 'Fira Sans Extra Condensed', sans-serif;
+    --btn-font: 'News Cycle', sans-serif;
+    --service-title-font: 'Handlee', cursive;
+}
+
+
+.banner-bg {
+    /* background-image: url(../../../Assets/banner/banner-img-1.jpg); */
+    background-image: linear-gradient(to right, rgb(0, 0, 0, .7), rgb(0, 0, 0, .4)),
+        url(../../../../Assets/banner/banner-bg-2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    height: 600px;
+}
+
+.para-font {
+    font-family: var(--paragraph-font);
+}
+
+.heading-font {
+    font-family: var(--heading-font);
+}
+
+.btn-font {
+    font-family: var(--btn-font);
+}
+
+.nav-font {
+    font-family: var(--nav-link-font);
+}
+
+.title-font {
+    font-family: var(--service-title-font);
+}
