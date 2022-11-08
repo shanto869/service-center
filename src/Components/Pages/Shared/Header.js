@@ -1,16 +1,23 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => toast.success('Successfully Sign Out'))
+            .catch(err => toast.error(err.message))
+    }
 
     const meunItems = <>
         <li> <Link to='/' className='font-semibold mx-1'>Home</Link></li>
         <li> <Link to='/' className='font-semibold mx-1'>{user?.email}</Link></li>
         <li> <Link to='/login' className='font-semibold mx-1'>Login</Link></li>
         <li> <Link to='/signup' className='font-semibold mx-1'>Sign Up</Link></li>
-        <li> <Link to='/' className='font-semibold mx-1'>Logout</Link></li>
+        <li> <Link to='/' onClick={handleLogOut} className='font-semibold mx-1'>Logout</Link></li>
 
     </>
 
