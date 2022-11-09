@@ -21,6 +21,9 @@ const HomeServices = () => {
                     services.map(service => <Service key={service._id} service={service}></Service>)
                 }
             </div>
+            <div className='w-full text-center'>
+                <button className="btn btn-outline border-black border-2 rounded-3xl hover:bg-slate-700 text-black hover:text-white px-10 mt-6 btn-font">See All</button>
+            </div>
         </div>
     );
 };

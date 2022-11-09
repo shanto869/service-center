@@ -14,7 +14,7 @@ const Service = ({ service }) => {
                     <button className='btn w-full border-2 bg-white text-black border-[black]
                      hover:bg-slate-700 hover:text-white btn-font my-3'>View Details</button>
                     <hr />
-                    <span className='flex justify-between mt-1'>
+                    <span className='flex justify-between mt-2'>
                         <strong className='heading-font'>Price: ${price}</strong>
                         <small>
                             {
