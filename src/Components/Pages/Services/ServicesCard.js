@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
-const Service = ({ service }) => {
+const ServicesCard = ({ service }) => {
     const { picture, price, trainer, service_name, ratings, description, _id } = service;
     return (
+
         <div className='shadow-md rounded-lg my-5'>
             <div className='p-2'>
                 <img src={picture} className='rounded-lg cursor-pointer ' alt="" />
@@ -11,7 +12,7 @@ const Service = ({ service }) => {
                     <h3 className='heading-font text-xl font-bold'>{service_name}</h3>
                     <p className='para-font'>{description?.length > 100 ? description.slice(0, 100) + '...' : description}</p>
                     <button className='btn w-full border-2 bg-white text-black border-[black]
-                     hover:bg-slate-700 hover:text-white btn-font my-3'>View Details</button>
+                 hover:bg-slate-700 hover:text-white btn-font my-3'>View Details</button>
                     <hr />
                     <span className='flex justify-between mt-2'>
                         <strong className='heading-font'>Price: ${price}</strong>
@@ -27,4 +28,4 @@ const Service = ({ service }) => {
     );
 };
 
-export default Service;
+export default ServicesCard;

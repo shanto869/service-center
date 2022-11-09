@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Service from './Service';
 
 const HomeServices = () => {
@@ -22,7 +23,9 @@ const HomeServices = () => {
                 }
             </div>
             <div className='w-full text-center'>
-                <button className="btn btn-outline border-black border-2 rounded-3xl hover:bg-slate-700 text-black hover:text-white px-10 mt-6 btn-font">See All</button>
+                <Link to='/services'>
+                    <button className="btn btn-outline border-black border-2 rounded-3xl hover:bg-slate-700 text-black hover:text-white px-10 mt-6 btn-font">See All</button>
+                </Link>
             </div>
         </div>
     );
