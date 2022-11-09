@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaAngleDoubleRight, FaStar } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import ServiceReview from './ServiceReview';
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData()
@@ -25,25 +26,28 @@ const ServiceDetails = () => {
                                 }
                             </span>
                         </div>
-                        <div>
+                        <div className='p-2 shadow-lg'>
                             <img src={picture} className='inline-block w-full' alt="" />
-                            <div className='flex justify-around mt-8'>
+                            <div className='flex justify-around my-8'>
                                 <div>
                                     <h4 className='text-lg nav-font'>Total joined this service: {join_quantity}</h4>
                                     <h2 className='text-2xl title-font font-bold mt-4'>Price: ${price}</h2>
                                 </div>
                                 <span>
                                     {
-                                        ratings.map(rating => <FaStar className='inline mx-0.5 text-warning'></FaStar>)
+                                        ratings.map(rating => <FaStar key={rating} className='inline mx-0.5 text-warning'></FaStar>)
                                     }
                                 </span>
                             </div>
+                            <button className='btn w-full border-2 bg-white text-black border-[black]
+                 hover:bg-slate-700 hover:text-white btn-font my-3'>Registation Now</button>
                         </div>
                     </div>
                 </div>
-                <div>
+            </div>
 
-                </div>
+            <div className='mx-8 my-12'>
+                <ServiceReview id={_id} serviceName={service_name} ></ServiceReview>
             </div>
         </div>
     );

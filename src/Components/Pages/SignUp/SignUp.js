@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { FaGooglePlusG } from 'react-icons/fa';
@@ -5,7 +6,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const SignUp = () => {
-    const { createUserWithEmail } = useContext(AuthContext)
+    const { createUserWithEmail, googleSignIn } = useContext(AuthContext)
+
+    const googleProvider = new GoogleAuthProvider()
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -21,6 +24,20 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Sign Up')
+            })
+            .catch(err => {
+                console.error(err)
+                toast.error(err.message)
+            })
+    }
+
+
+    const handleGoogleSignIn = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                toast.success('Successfully Login')
             })
             .catch(err => {
                 console.error(err)
@@ -66,12 +83,12 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
 
                         <div className='form-control mx-7 mb-8'>
-                            <button className="btn btn-outline">
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline">
                                 <FaGooglePlusG className='text-4xl'></FaGooglePlusG>
                             </button>
                         </div>

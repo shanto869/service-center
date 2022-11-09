@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import { FaGooglePlusG } from "react-icons/fa";
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { logInWithEmail } = useContext(AuthContext)
+    const { logInWithEmail, googleSignIn } = useContext(AuthContext)
+
+    const googleProvider = new GoogleAuthProvider()
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -24,6 +27,20 @@ const Login = () => {
                 console.error(err)
                 toast.error(err.message)
             })
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                toast.success('Successfully Login')
+            })
+            .catch(err => {
+                console.error(err)
+                toast.error(err.message)
+            })
+
     }
 
 
@@ -62,7 +79,7 @@ const Login = () => {
                         </form>
 
                         <div className='form-control mx-7 mb-8'>
-                            <button className="btn btn-outline">
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline">
                                 <FaGooglePlusG className='text-4xl'></FaGooglePlusG>
                             </button>
                         </div>

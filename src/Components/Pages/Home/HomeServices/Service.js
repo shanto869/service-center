@@ -20,7 +20,7 @@ const Service = ({ service }) => {
                         <strong className='title-font font-bold'>Price: ${price}</strong>
                         <small>
                             {
-                                ratings.map(rating => <FaStar className='inline mx-0.5'></FaStar>)
+                                ratings.map(rating => <FaStar key={rating} className='inline mx-0.5'></FaStar>)
                             }
                         </small>
                     </span>
