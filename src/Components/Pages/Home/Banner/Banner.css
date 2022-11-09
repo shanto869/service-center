@@ -35,6 +35,14 @@
     background-size: cover;
 }
 
+.service-details {
+    background-image: linear-gradient(to right, rgb(0, 0, 0, .6), rgb(0, 0, 0, .5)),
+        url(https://images.pexels.com/photos/2985098/pexels-photo-2985098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .para-font {
     font-family: var(--paragraph-font);
 }
@@ -53,4 +61,10 @@
 
 .title-font {
     font-family: var(--service-title-font);
+}
+
+.service-info {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 20px;
 }
