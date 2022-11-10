@@ -1,10 +1,12 @@
 import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
     const services = useLoaderData()
     const navigate = useNavigation()
+    useTitle('All Services')
 
     if (navigate.state === 'loading') {
         return <h4>Loading...</h4>

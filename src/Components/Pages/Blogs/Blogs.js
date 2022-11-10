@@ -1,7 +1,10 @@
 import React from 'react';
 import { FaAngleDoubleRight } from 'react-icons/fa';
+import useTitle from '../../../Hooks/useTitle';
 
 const Blogs = () => {
+    useTitle('Blogs')
+
     return (
         <div className='text-center my-12 mx-10 shadow-2xl p-10 rounded-md'>
 

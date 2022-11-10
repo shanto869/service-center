@@ -1,8 +1,11 @@
 import React from 'react';
+import useTitle from '../../../../Hooks/useTitle';
 
 import './Banner.css'
 
 const Banner = () => {
+    useTitle("Home")
+
     return (
         <div className='mb-10'>
             <div className="banner-bg text-white">
@@ -14,7 +17,9 @@ const Banner = () => {
 
                     <div>
                         <button className="btn btn-outline border-white border-2 rounded-3xl hover:bg-white text-white hover:text-black px-8 mt-5 mr-8 btn-font">Know More</button>
-                        <button className="btn btn-outline border-white border-2 rounded-3xl hover:bg-white text-white hover:text-black px-8 mt-5 btn-font">Contact Me</button>
+
+
+
                     </div>
                 </div>
             </div>

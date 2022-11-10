@@ -4,11 +4,13 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
 import { GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../../Hooks/useTitle';
 
 const Login = () => {
     const { logInWithEmail, googleSignIn } = useContext(AuthContext)
 
     const googleProvider = new GoogleAuthProvider()
+    useTitle('Login')
 
     let navigate = useNavigate();
     let location = useLocation();

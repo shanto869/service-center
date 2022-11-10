@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { FaAngleDoubleRight, FaStar } from 'react-icons/fa';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 import ServiceReview from './ServiceReview';
 
 const ServiceDetails = () => {
@@ -10,6 +11,7 @@ const ServiceDetails = () => {
     const { picture, price, trainer, service_name, ratings, description, _id, join_quantity, qualification, service_plan, email } = serviceDetails;
     console.log(serviceDetails)
     const navigate = useNavigation()
+    useTitle('Details')
 
     if (loading) {
         return <h3>Loading...</h3>

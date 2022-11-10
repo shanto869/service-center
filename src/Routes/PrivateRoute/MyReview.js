@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import ShowMyReviews from './ShowMyReviews';
 
 const MyReview = () => {
@@ -8,6 +9,7 @@ const MyReview = () => {
     const [myReviews, setMyReviews] = useState([])
     console.log(myReviews)
 
+    useTitle('My Review')
 
     useEffect(() => {
         fetch(`http://localhost:5000/my_review?email=${user.email}`)
@@ -28,7 +30,7 @@ const MyReview = () => {
                     console.log(data)
                     if (data.deletedCount > 0) {
                         toast.success('Successfully remove review')
-                        const remaining = myReviews[0].filter(review => review._id !== id)
+                        const remaining = myReviews.filter(review => review._id !== id)
                         setMyReviews(remaining)
                     }
                 })
