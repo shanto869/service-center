@@ -11,6 +11,7 @@ const Home = () => {
             <HomeServices></HomeServices>
             <HealthCouch></HealthCouch>
             <Exprience></Exprience>
+            
         </div>
     );
 };

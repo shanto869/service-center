@@ -74,7 +74,7 @@ const Login = () => {
                 <div className="hero-content grid grid-cols-1 md:grid-cols-2 gap-x-4">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6"> You can login with any email and password. Phone number: If you have a google account you can login on your account</p>
+                        <p className="py-6">You can login with any email and password. If you have a google account you can login on your account</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">

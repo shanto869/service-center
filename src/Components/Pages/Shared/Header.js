@@ -25,7 +25,7 @@ const Header = () => {
             </>
                 :
                 <>
-                    <li> <Link to='/login' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-warning'>Login</Link></li>
+                    <li> <Link to='/login' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-[#b2dd4c]'>Login</Link></li>
                     <li> <Link to='/signup' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-[#b2dd4c]'>Sign Up</Link></li>
 
                 </>

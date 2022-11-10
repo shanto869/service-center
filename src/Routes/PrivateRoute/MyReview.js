@@ -9,8 +9,6 @@ const MyReview = () => {
     const [myReviews, setMyReviews] = useState([])
     console.log(myReviews)
 
-    useTitle('My Review')
-
     useEffect(() => {
         fetch(`http://localhost:5000/my_review?email=${user.email}`, {
             headers: {
@@ -81,6 +79,8 @@ const MyReview = () => {
                         <h4 className='text-4xl my-36 text-center'>No reviews were added</h4>
                     </>
             }
+
+
         </div>
     );
 };

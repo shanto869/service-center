@@ -1,10 +1,9 @@
 import React from 'react';
 import { FaEdit, FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ShowMyReviews = ({ review, handleDeleteReview }) => {
-
     const { customer, email, image, message, rating, serviceId, serviceTitle, _id } = review;
-    console.log(review)
 
     return (
         <tr className=' my-10 py-10 border-2 shadow-lg'>
@@ -13,7 +12,6 @@ const ShowMyReviews = ({ review, handleDeleteReview }) => {
                     <div className="avatar">
                         <div className="w-24 rounded-xl">
                             {
-
                                 <img src={image} alt="Avatar Tailwind CSS Component" />
                             }
                         </div>

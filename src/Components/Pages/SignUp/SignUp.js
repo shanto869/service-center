@@ -60,7 +60,7 @@ const SignUp = () => {
                 <div className="hero-content grid grid-cols-1 md:grid-cols-2 gap-x-4">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Sign Up now!</h1>
-                        <p className="py-6"><p className="py-6"> You can sign up with any email and password. If you have a google account you can sign up and create a new account.</p></p>
+                        <p className="py-6"> You can sign up with any email and password. If you have a google account you can sign up and create a new account.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">
