@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaAngleDoubleRight, FaStar } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import ServiceReview from './ServiceReview';
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData()
+    const { loading } = useContext(AuthContext)
     const { picture, price, trainer, service_name, ratings, description, _id, join_quantity, qualification, service_plan, email } = serviceDetails;
     console.log(serviceDetails)
+    const navigate = useNavigation()
+
+    if (loading) {
+        return <h3>Loading...</h3>
+    }
+
+    if (navigate.state === 'loading') {
+        return <h3>Loading...</h3>
+    }
+
     return (
         <div>
             <div className='service-details py-8 text-center text-white'>

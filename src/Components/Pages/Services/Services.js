@@ -1,12 +1,15 @@
 import React from 'react';
-import { FaStar } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
     const services = useLoaderData()
+    const navigate = useNavigation()
 
-    console.log(services)
+    if (navigate.state === 'loading') {
+        return <h4>Loading...</h4>
+    }
+
 
     return (
         <div>

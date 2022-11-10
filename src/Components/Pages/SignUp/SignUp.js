@@ -2,13 +2,17 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { FaGooglePlusG } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const SignUp = () => {
     const { createUserWithEmail, googleSignIn } = useContext(AuthContext)
 
     const googleProvider = new GoogleAuthProvider()
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -24,6 +28,7 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Sign Up')
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 console.error(err)
@@ -38,6 +43,7 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Login')
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 console.error(err)

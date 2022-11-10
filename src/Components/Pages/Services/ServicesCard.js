@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const ServicesCard = ({ service }) => {
+    const { loading } = useContext(AuthContext)
     const { picture, price, trainer, service_name, ratings, description, _id } = service;
 
+    if (loading) {
+        return <h3>Loading...</h3>
+    }
 
     return (
 

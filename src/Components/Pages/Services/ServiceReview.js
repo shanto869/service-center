@@ -1,21 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import ShowServiceReview from './ShowServiceReview';
 
 const ServiceReview = ({ id, serviceName }) => {
-    const { user } = useContext(AuthContext)
-    console.log(user.photoURL)
+    const { user, loading } = useContext(AuthContext)
+
+    const [reviews, setReviews] = useState([])
+    console.log(reviews)
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/review/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                const newReview = [...reviews, data];
+                setReviews(newReview)
+            })
+    }, [id])
+
 
     const handleGivenReview = (event) => {
         event.preventDefault()
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`
         const email = user?.email || 'unregister';
-        const phone = form.phone.value;
+        const rating = form.rating.value;
         const message = form.message.value;
 
-        console.log(name, email, phone, message)
+        console.log(name, email, rating, message)
 
         const reviewInfo = {
             serviceId: id,
@@ -23,7 +36,7 @@ const ServiceReview = ({ id, serviceName }) => {
             customer: name,
             image: user?.photoURL,
             email,
-            phone,
+            rating,
             message,
         }
 
@@ -34,49 +47,79 @@ const ServiceReview = ({ id, serviceName }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                if (data.acknowledged) {
+                    toast.success('Review successfully added')
+                    form.reset()
+                }
             })
-
-        // fetch('http://localhost:5000/review', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(reviewInfo)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.acknowledged) {
-        //             form.reset()
-        //             alert('Order placed successfully')
-        //         }
-        //         console.log(data)
-        //     })
-
-        // form.reset()
     }
+
 
     return (
         <div>
             <h3 className='text-3xl title-font text-center'>Reviews</h3>
-            <div className='shadow-lg'>
+            <div className=''>
                 <div className='mx-auto mb-9'>
-                    <div className='font-bold text-center mb-9'>
-                        <h2 className='text-xl mt-2'>Please give a review</h2>
-                    </div>
 
-                    <form onSubmit={handleGivenReview} className='mx-auto  w-auto text-center'>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center mb-10'>
+                    {
+                        user?.uid ? <>
+                            <form onSubmit={handleGivenReview} className='mx-auto shadow-lg w-auto text-center py-5'>
+                                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center mb-10'>
 
-                            <input name='firstName' type="text" placeholder="First Name" className="input input-bordered w-full max-w-md" required />
-                            <input name='lastName' type="text" placeholder="Last Name" className="input input-bordered w-full max-w-md" required />
-                            <input name='phone' type="number" placeholder="Your Phone" className="input input-bordered w-full max-w-md" required />
-                            <input name='email' type="text" defaultValue={user?.email} readOnly placeholder="Your Email" className="input input-bordered w-full max-w-md" required />
-                        </div>
+                                    <input name='firstName' type="text" placeholder="First Name" className="input input-bordered w-full max-w-md" required />
+                                    <input name='lastName' type="text" placeholder="Last Name" className="input input-bordered w-full max-w-md" required />
+                                    <input name='rating' type="number" placeholder="Your Ratings" className="input input-bordered w-full max-w-md" required />
+                                    <input name='email' type="text" defaultValue={user?.email} readOnly placeholder="Your Email" className="input input-bordered w-full max-w-md" required />
+                                </div>
 
-                        <textarea name='message' className="textarea textarea-bordered w-3/5 h-24" placeholder="Your Message" required></textarea> <br /><br />
-                        <input className='btn btn-secondary ml-auto' type="submit" value="Place Your Order" />
-                    </form>
+                                <textarea name='message' className="textarea textarea-bordered w-3/5 h-24" placeholder="Your Message" required></textarea> <br /><br />
+                                <input className='btn btn-outline border-black border-2 rounded-3xl hover:bg-slate-700 text-black hover:text-white px-10 mt-6 btn-font' type="submit" value="Place Your Review" />
+                            </form>
+                        </>
+                            : <>
+                                <div className='font-bold text-center mb-9'>
+                                    <h2 className='text-xl mt-2'>Please login to add a review
+                                        <Link to='/login' className='btn btn-link ml-0.5'>Login</Link></h2>
+                                </div>
+                            </>
+                    }
+
+
+
+                    {
+                        reviews?.length > 0 && <>
+                            <div className='mx-5'>
+                                <div className="overflow-x-auto w-full">
+                                    <table className="table w-full">
+
+                                        <thead>
+                                            <tr>
+                                                <th>Customar Info</th>
+                                                <th>Service Info</th>
+                                                <th>Status</th>
+                                                <th>
+                                                    <label>
+
+                                                    </label>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            {
+                                                reviews[0]?.map(review => <ShowServiceReview key={review._id}
+                                                    review={review}
+                                                ></ShowServiceReview>)
+                                            }
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </>
+                    }
+
                 </div>
             </div>
         </div>

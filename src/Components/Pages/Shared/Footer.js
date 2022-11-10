@@ -1,9 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
 
 const Footer = () => {
+    const navigate = useNavigation()
+
+    if (navigate.state === 'loading') {
+        return <h3>Loading...</h3>
+    }
+
     return (
-        <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+        <footer className="footer footer-center p-10 rounded bg-slate-900 text-white">
             <div className="grid grid-flow-col gap-4">
                 <Link className="link link-hover">About us</Link>
                 <Link className="link link-hover">Contact</Link>
@@ -18,7 +24,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p>Copyright © 2022 - All right reserved by ACME Industries Ltd</p>
+                <p>Copyright © 2022 - All right reserved by <span className='text-warning'>Fitness Cube</span></p>
             </div>
         </footer>
     );

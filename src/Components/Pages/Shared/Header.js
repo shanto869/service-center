@@ -14,27 +14,29 @@ const Header = () => {
     }
 
     const meunItems = <>
-        <li> <Link to='/' className='font-semibold mx-1'>Home</Link></li>
-        <li> <Link to='/' className='font-semibold mx-1'>{user?.email}</Link></li>
+        <li> <Link to='/' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-[#b2dd4c]'>Home</Link></li>
+
         {
             user?.email ? <>
-                <li> <Link to='/' onClick={handleLogOut} className='font-semibold mx-1'>Logout</Link></li>
+                <li> <Link to='/' onClick={handleLogOut} className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-[#b2dd4c]'>Logout</Link></li>
+                <li> <Link to='/add_services' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-[#b2dd4c]'>Add Services</Link></li>
+                <li> <Link to='/my_review' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-[#b2dd4c]'>My Reviews</Link></li>
 
             </>
                 :
                 <>
-                    <li> <Link to='/login' className='font-semibold mx-1'>Login</Link></li>
-                    <li> <Link to='/signup' className='font-semibold mx-1'>Sign Up</Link></li>
+                    <li> <Link to='/login' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-warning'>Login</Link></li>
+                    <li> <Link to='/signup' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-[#b2dd4c]'>Sign Up</Link></li>
 
                 </>
         }
-
+        <li> <Link to='/blogs' className='btn btn-link text-white nav-font capitalize decoration-none text-lg hover:text-[#b2dd4c]'>Blogs</Link></li>
 
     </>
 
 
     return (
-        <div className="navbar bg-slate-300 px-5">
+        <div className="navbar bg-slate-900 px-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -46,7 +48,7 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <Link className="btn btn-link text-black text-3xl heading-font capitalize">Fitness  <FaCuttlefish className='ml-2' />ube</Link >
+                <Link to='/' className="btn btn-link text-white text-3xl heading-font capitalize">Fitness  <FaCuttlefish className='ml-2' />ube</Link >
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

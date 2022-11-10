@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGooglePlusG } from "react-icons/fa";
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import toast from 'react-hot-toast';
@@ -9,6 +9,10 @@ const Login = () => {
     const { logInWithEmail, googleSignIn } = useContext(AuthContext)
 
     const googleProvider = new GoogleAuthProvider()
+
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || '/';
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -22,6 +26,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Login')
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 console.error(err)
@@ -35,6 +40,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Login')
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 console.error(err)
