@@ -9,7 +9,7 @@ const ServicesCard = ({ service }) => {
     const { picture, price, trainer, service_name, ratings, description, _id } = service;
 
     if (loading) {
-        return <Loading></Loading>
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 text-center mt-20"></div>
     }
 
     return (

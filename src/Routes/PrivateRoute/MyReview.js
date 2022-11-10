@@ -12,7 +12,11 @@ const MyReview = () => {
     useTitle('My Review')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my_review?email=${user.email}`)
+        fetch(`http://localhost:5000/my_review?email=${user.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('fitness-cube')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setMyReviews(data)

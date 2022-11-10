@@ -27,7 +27,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
-                toast.success('Successfully Login')
+                toast.success('Successfully Login');
+                getJwtToken(user.email)
                 navigate(from, { replace: true });
             })
             .catch(err => {
@@ -42,23 +43,38 @@ const Login = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Login')
+                getJwtToken(user.email)
                 navigate(from, { replace: true });
             })
             .catch(err => {
                 console.error(err)
                 toast.error(err.message)
             })
+    }
 
+    const getJwtToken = (userEmail) => {
+        const currentUser = { email: userEmail }
+
+        fetch('http://localhost:5000/jwt', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(currentUser)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                localStorage.setItem('fitness-cube', data.token)
+            })
     }
 
 
     return (
-        <div>
+        <div className='mx-10'>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content grid grid-cols-1 md:grid-cols-2 gap-x-4">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <p className="py-6"> You can login with any email and password. Phone number: If you have a google account you can login on your account</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">
@@ -100,4 +116,3 @@ const Login = () => {
 
 export default Login;
 
-{/* <img src="https://mambaui.com/assets/svg/Business_SVG.svg" alt="" /> */ }
