@@ -1,7 +1,7 @@
 
 ## Fitness Cube
 
-Live Website Link: [https://learning-platform-e8b56.web.app/](https://learning-platform-e8b56.web.app/)
+Live Website Link: [https://service-center-9247f.web.app/](https://service-center-9247f.web.app/)
 
 
 ### List of technologies that I have Used in my projects: 

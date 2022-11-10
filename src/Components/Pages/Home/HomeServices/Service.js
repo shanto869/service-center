@@ -1,13 +1,21 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const Service = ({ service }) => {
     const { picture, price, trainer, service_name, ratings, description, _id } = service;
     return (
         <div className='shadow-md rounded-lg my-5'>
             <div className='p-2'>
-                <img src={picture} className='rounded-lg cursor-pointer ' alt="" />
+                {/* <img src={picture} className='rounded-lg cursor-pointer ' alt="" /> */}
+                <PhotoProvider>
+                    <PhotoView src={picture} className='w-full' style={{ objectFit: 'cover' }}>
+                        <img src={picture} className='rounded-lg cursor-pointer ' alt="" />
+                    </PhotoView>
+                </PhotoProvider>
+
                 <div className='py-4 mx-4'>
                     <h3 className='heading-font text-xl font-bold'>{service_name}</h3>
                     <p className='para-font'>{description?.length > 100 ? description.slice(0, 100) + '...' : description}</p>
