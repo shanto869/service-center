@@ -7,7 +7,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 const ServicesCard = ({ service }) => {
     const { loading } = useContext(AuthContext)
-    const { picture, price, trainer, service_name, ratings, description, _id } = service;
+    const { picture, price, service_name, ratings, description, _id } = service;
 
     if (loading) {
         return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400 text-center mt-20"></div>
@@ -35,7 +35,7 @@ const ServicesCard = ({ service }) => {
                         <strong className='heading-font'>Price: ${price}</strong>
                         <small>
                             {
-                                ratings.map(rating => <FaStar key={rating} className='inline mx-0.5'></FaStar>)
+                                ratings?.map(rating => <FaStar key={rating} className='inline mx-0.5 text-warning'></FaStar>)
                             }
                         </small>
                     </span>

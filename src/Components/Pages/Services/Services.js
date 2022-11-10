@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import useTitle from '../../../Hooks/useTitle';
-import Loading from '../../Loading/Loading';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {

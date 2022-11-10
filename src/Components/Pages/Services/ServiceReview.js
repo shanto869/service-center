@@ -64,7 +64,7 @@ const ServiceReview = ({ id, serviceName }) => {
 
                     {
                         user?.uid ? <>
-                            <form onSubmit={handleGivenReview} className='mx-auto shadow-lg w-auto text-center py-5 mb-8'>
+                            <form onSubmit={handleGivenReview} className='mx-auto shadow-lg w-auto text-center py-5 mb-8 mt-6'>
                                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center mb-10'>
 
                                     <input name='firstName' type="text" placeholder="First Name" className="input input-bordered w-full max-w-md" required />

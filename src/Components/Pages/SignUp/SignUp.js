@@ -30,6 +30,7 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Sign Up')
+                getJwtToken(user.email)
                 navigate(from, { replace: true });
             })
             .catch(err => {
@@ -45,13 +46,28 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user)
                 toast.success('Successfully Login')
+                getJwtToken(user.email)
                 navigate(from, { replace: true });
             })
             .catch(err => {
                 console.error(err)
                 toast.error(err.message)
             })
+    }
 
+    const getJwtToken = (userEmail) => {
+        const currentUser = { email: userEmail }
+
+        fetch('https://service-center-server-shanto869.vercel.app/jwt', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(currentUser)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                localStorage.setItem('fitness-cube', data.token)
+            })
     }
 
     return (

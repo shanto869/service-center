@@ -5,7 +5,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 const Service = ({ service }) => {
-    const { picture, price, trainer, service_name, ratings, description, _id } = service;
+    const { picture, price, service_name, ratings, description, _id } = service;
     return (
         <div className='shadow-md rounded-lg my-5'>
             <div className='p-2'>
@@ -28,7 +28,7 @@ const Service = ({ service }) => {
                         <strong className='title-font font-bold'>Price: ${price}</strong>
                         <small>
                             {
-                                ratings.map(rating => <FaStar key={rating} className='inline mx-0.5'></FaStar>)
+                                ratings?.map(rating => <FaStar key={rating} className='inline mx-0.5 text-warning'></FaStar>)
                             }
                         </small>
                     </span>
