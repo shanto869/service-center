@@ -3,6 +3,7 @@ import { FaAngleDoubleRight, FaStar } from 'react-icons/fa';
 import { useLoaderData, useNavigation } from 'react-router-dom';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
 import useTitle from '../../../Hooks/useTitle';
+import Loading from '../../Loading/Loading';
 import ServiceReview from './ServiceReview';
 
 const ServiceDetails = () => {
@@ -14,11 +15,11 @@ const ServiceDetails = () => {
     useTitle('Details')
 
     if (loading) {
-        return <h3>Loading...</h3>
+        return <Loading></Loading>
     }
 
     if (navigate.state === 'loading') {
-        return <h3>Loading...</h3>
+        return <Loading></Loading>
     }
 
     return (

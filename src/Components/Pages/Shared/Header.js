@@ -48,7 +48,7 @@ const Header = () => {
 
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-link text-white text-3xl heading-font capitalize">Fitness  <FaCuttlefish className='ml-2' />ube</Link >
+                <Link to='/' className="btn btn-link text-warning text-3xl heading-font capitalize">Fitness  <FaCuttlefish className='ml-2' />ube</Link >
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -58,11 +58,15 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img src={user?.photoURL} alt='' />
-                    </div>
-                </label>
+                {
+                    user?.uid && <>
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img src={user?.photoURL} alt='' />
+                            </div>
+                        </label>
+                    </>
+                }
             </div>
         </div>
     );

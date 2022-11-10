@@ -99,3 +99,5 @@ const Login = () => {
 };
 
 export default Login;
+
+{/* <img src="https://mambaui.com/assets/svg/Business_SVG.svg" alt="" /> */ }
