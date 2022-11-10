@@ -55,7 +55,7 @@ const Login = () => {
     const getJwtToken = (userEmail) => {
         const currentUser = { email: userEmail }
 
-        fetch('http://localhost:5000/jwt', {
+        fetch('https://service-center-server-shanto869.vercel.app/jwt', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(currentUser)

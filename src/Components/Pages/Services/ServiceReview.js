@@ -10,7 +10,7 @@ const ServiceReview = ({ id, serviceName }) => {
     console.log(reviews)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/review/${id}`)
+        fetch(`https://service-center-server-shanto869.vercel.app/review/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -41,7 +41,7 @@ const ServiceReview = ({ id, serviceName }) => {
             message,
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://service-center-server-shanto869.vercel.app/review', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(reviewInfo)

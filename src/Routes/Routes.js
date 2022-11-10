@@ -26,11 +26,11 @@ export const routers = createBrowserRouter([
             },
             {
                 path: '/services', element: <Services></Services>,
-                loader: () => fetch('http://localhost:5000/services_all')
+                loader: () => fetch('https://service-center-server-shanto869.vercel.app/services_all')
             },
             {
                 path: '/service/:id', element: <ServiceDetails></ServiceDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`)
+                loader: ({ params }) => fetch(`https://service-center-server-shanto869.vercel.app/service/${params.id}`)
             },
             {
                 path: '/blogs', element: <Blogs></Blogs>

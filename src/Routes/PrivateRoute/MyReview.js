@@ -10,7 +10,7 @@ const MyReview = () => {
     console.log(myReviews)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my_review?email=${user.email}`, {
+        fetch(`https://service-center-server-shanto869.vercel.app/my_review?email=${user.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('fitness-cube')}`
             }
@@ -24,7 +24,7 @@ const MyReview = () => {
     const handleDeleteReview = (id) => {
         const confirmation = window.confirm('Are you sure you want to remove this review?')
         if (confirmation) {
-            fetch(`http://localhost:5000/my_review?email=${user.email}`, {
+            fetch(`https://service-center-server-shanto869.vercel.app/my_review?email=${user.email}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
